@@ -5,7 +5,6 @@ import About from '../views/About'
 import Home from '../views/Home'
 import News from '../views/News'
 import Message from '../views/Message'
-import MessageDetail from '../views/MessageDetail'
 
 /*
 * 声明使用vue-router
@@ -41,27 +40,16 @@ export default new Router({
       * */
       children: [
         {
-          /*
-          * 因为在子路由中，所以设置默认路由时，要为空
-          * */
-          path: '',
-          component: News,
-        },
-        {
           path: '/home/news',
           component: News,
         },
         {
           path: 'message',
           component: Message,
-          children: [
-            {
-              path: 'messageDetail/:id',
-              component: MessageDetail,
-            },
-          ]
         }
       ]
     },
+
+
   ]
 })
